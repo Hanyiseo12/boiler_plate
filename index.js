@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const port = 8000;
 const bodyParser = require("body-parser");
-
 const config = require("./config/key");
+
 const { User } = require("./models/User");
 
 //application/x-www-form-urlencoded 이런 데이터를 분석
@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extented: true })); //bodyparser은 client에서
 app.use(bodyParser.json());
 const mongoose = require("mongoose");
 mongoose
+
   .connect(config.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
